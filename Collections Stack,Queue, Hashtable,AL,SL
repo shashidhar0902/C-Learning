@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System.Text;
+
+public class Example {
+
+	public static void Main()
+	{
+	    Console.WriteLine("Stack");
+		Stack st = new Stack();
+		st.Push("Shashi");
+		foreach(IEnumerable ie in st){
+		    Console.WriteLine(ie);
+		}
+		
+		Console.WriteLine("Queue");
+		Queue q = new Queue();
+		q.Enqueue("Shashi");
+		q.Dequeue();
+		foreach(IEnumerable ie in st){
+		    Console.WriteLine(ie);
+		}
+		
+		Console.WriteLine("HashTable");
+		Hashtable ht = new Hashtable();
+		ht.Add("I","IND");
+		foreach(DictionaryEntry ie in ht){
+		    Console.WriteLine("Key: "+ie.Key +" Value:"+ ie.Value);
+		}
+		
+		Console.WriteLine("---------------Array List--------------------");
+		    ArrayList al = new ArrayList ();
+		      al.Add ("b");
+		      al.Add ("a");
+		      Console.WriteLine("-------------Before Sorting-------------");
+		       foreach (IEnumerable ie in al)
+		    {
+		      Console.WriteLine (ie);
+		    }
+		      Console.WriteLine("--------------After Sorting the array------------");
+		      al.Sort();
+		      foreach (IEnumerable ie in al)
+		    {
+		      Console.WriteLine (ie);
+		    }
+
+		    Console.WriteLine("---------------Sorted List--------------------");
+		    SortedList sl = new SortedList();
+		      sl.Add("b","ball");
+		      sl.Add("a","apple");
+
+		      foreach (DictionaryEntry de in sl)
+		    {
+		      Console.WriteLine ("Key: "+de.Key +" , Value: "+de.Value);
+		    }
+		    Console.WriteLine("Count function: "+ sl.Count);
+
+	}
+}
