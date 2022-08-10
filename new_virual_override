@@ -1,0 +1,72 @@
+using System;
+namespace App1{
+    
+    class A{
+        
+        public void Add(int i, int j,string s){
+            
+            Console.WriteLine("In A : {0} Created with {1}",i+j,s);
+            
+        }
+        
+    }
+    
+    class B : A{
+        
+        public new void Add(int i, int j,string s){
+            
+            Console.WriteLine("In B : {0} Created with {1}",i+j,s);
+            
+        }
+        
+    }
+    
+    class C{
+        
+        public virtual void Subs(int i, int j,string s){
+            
+            Console.WriteLine("In C : {0} Created with {1}",i-j,s);
+            
+        }
+        
+    }
+    
+    class D : C{
+        
+        public override void Subs(int i, int j,string s){
+            
+            Console.WriteLine("In B : {0} Created with {1}",i-j,s);
+            
+        }
+        
+    }
+    
+    class HelloWorld {
+        
+        static void Main() {
+            
+            Console.WriteLine("Testing new in B with same Add funstions in both A and B:\n");
+        
+            A a = new A(); 
+            a.Add(1,4,"aa");
+            
+            B b = new B();
+            b.Add(1,2,"bb");
+            
+            A ab = new B();
+            ab.Add(0,0,"ab");
+            
+            Console.WriteLine("Testing virtual in C and override in D:\n");
+            
+            C c = new C();
+            c.Subs(2,1,"cc");
+            
+            D d = new D();
+            d.Subs(4,2,"dd");
+            
+            C cd = new D();
+            cd.Subs(9,5,"cd");
+            
+        }
+    }
+}
